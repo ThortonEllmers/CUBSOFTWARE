@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSIC DOWNLOADER</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Download high-quality music from YouTube, YouTube Music, and Spotify with CUB SOFTWARE's Music Downloader. Choose from 128, 192, 256, or 320 kbps quality with full metadata and artwork.">
+    <meta name="keywords" content="music downloader, YouTube downloader, Spotify downloader, YouTube Music, MP3 converter, high quality audio, 320 kbps, playlist downloader, CUB SOFTWARE">
+    <meta name="author" content="CUB">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cubsoftware.site/apps/music-downloader">
+
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Music Downloader - CUB SOFTWARE">
+    <meta property="og:description" content="Download high-quality music from YouTube, YouTube Music, and Spotify. Multiple quality options from 128-320 kbps with full metadata and artwork.">
+    <meta property="og:url" content="https://cubsoftware.site/apps/music-downloader">
+    <meta property="og:site_name" content="CUB SOFTWARE">
+    <meta property="og:image" content="https://cubsoftware.site/static/images/company-logo.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Music Downloader - CUB SOFTWARE">
+    <meta name="twitter:description" content="Download high-quality music from YouTube, YouTube Music, and Spotify. Choose your quality from 128-320 kbps with full metadata.">
+    <meta name="twitter:image" content="https://cubsoftware.site/static/images/company-logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/static/images/company-logo.png">
+    <link rel="apple-touch-icon" href="/static/images/company-logo.png">
+
+    <link rel="stylesheet" href="/static/css/shared.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="main-container">
+        {% include 'header.html' %}
+
+        <div class="page-content">
+            <div class="app-header">
+                <h1 style="font-family: var(--font-heading); font-size: 3rem; font-weight: 700; margin-bottom: 16px; text-align: center; color: #ffffff;">Music Downloader</h1>
+                <p class="subtitle" style="text-align: center; color: #b0b0b0; font-size: 1.2rem; margin-bottom: 30px;">Download from YouTube, YouTube Music, and Spotify in multiple quality options</p>
+            </div>
+
+            <div class="download-section">
+                <div class="input-group">
+                    <input
+                        type="text"
+                        id="urlInput"
+                        placeholder="Paste YouTube or Spotify URL here..."
+                        autocomplete="off"
+                    >
+                    <select id="qualitySelect" class="quality-select">
+                        <option value="320">320 kbps (Best)</option>
+                        <option value="256">256 kbps (High)</option>
+                        <option value="192">192 kbps (Good)</option>
+                        <option value="128">128 kbps (Small)</option>
+                    </select>
+                    <button id="downloadBtn" onclick="startDownload()">
+                        <span id="btnText">Download</span>
+                        <span id="btnLoader" class="loader" style="display: none;"></span>
+                    </button>
+                </div>
+                <div id="errorMessage" class="error-message"></div>
+            </div>
+
+            <div class="stats-section">
+                <div class="stat-item">
+                    <span class="stat-number" id="totalDownloads">0</span>
+                    <span class="stat-number-actual" id="totalDownloadsActual">(0)</span>
+                    <span class="stat-label">Global Song Downloads</span>
+                </div>
+            </div>
+
+            <div id="activeDownloads" class="downloads-container">
+                <!-- Active downloads will appear here -->
+            </div>
+
+            <div class="info-section">
+                <h3>How it works:</h3>
+                <ul>
+                    <li>Paste a URL from YouTube or Spotify</li>
+                    <li>Select your preferred audio quality (128-320 kbps)</li>
+                    <li>Click Download and watch real-time progress</li>
+                    <li>Files automatically download when ready</li>
+                </ul>
+                <h3 style="margin-top: 20px;">Supported:</h3>
+                <ul>
+                    <li>✅ YouTube Videos & Playlists</li>
+                    <li>✅ YouTube Music</li>
+                    <li>✅ Spotify Tracks & Playlists</li>
+                    <li>✅ Quality options: 128, 192, 256, 320 kbps</li>
+                </ul>
+                <p class="note">All downloads include full metadata and artwork.</p>
+            </div>
+        </div>
+
+        {% include 'footer.html' %}
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>

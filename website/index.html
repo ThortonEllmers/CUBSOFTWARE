@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUB SOFTWARE</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="CUB SOFTWARE offers powerful tools and applications including a high-quality music downloader for YouTube, YouTube Music, and Spotify. Download in multiple quality options from 128-320 kbps.">
+    <meta name="keywords" content="CUB SOFTWARE, music downloader, YouTube downloader, Spotify downloader, MP3 converter, high quality music, social media downloader, Instagram downloader, TikTok downloader">
+    <meta name="author" content="CUB">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cubsoftware.site">
+
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CUB SOFTWARE - Powerful Tools & Applications">
+    <meta property="og:description" content="Download high-quality music from YouTube, YouTube Music, and Spotify. Save content from Instagram, TikTok, Twitter, and Facebook. Multiple quality options from 128-320 kbps with full metadata.">
+    <meta property="og:url" content="https://cubsoftware.site">
+    <meta property="og:site_name" content="CUB SOFTWARE">
+    <meta property="og:image" content="https://cubsoftware.site/static/images/company-logo.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CUB SOFTWARE - Powerful Tools & Applications">
+    <meta name="twitter:description" content="Download high-quality music from YouTube, YouTube Music, and Spotify. Save content from Instagram, TikTok, Twitter, and Facebook.">
+    <meta name="twitter:image" content="https://cubsoftware.site/static/images/company-logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/static/images/company-logo.png">
+    <link rel="apple-touch-icon" href="/static/images/company-logo.png">
+
+    <link rel="stylesheet" href="/static/css/shared.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <div class="container">
+        {% include 'header.html' %}
+
+        <div class="stats-section">
+            <div class="stat-item">
+                <span class="stat-number" id="totalDownloads">0</span>
+                <span class="stat-number-actual" id="totalDownloadsActual">(0)</span>
+                <span class="stat-label">Total Global Downloads</span>
+            </div>
+        </div>
+
+        <main class="apps-grid">
+            <div class="app-card">
+                <div class="app-icon youtube-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                    </svg>
+                </div>
+                <h2 class="app-title">Music Downloader</h2>
+                <p class="app-description">Download high-quality music from YouTube, YouTube Music, and Spotify. Get 320kbps MP3s with full metadata and artwork included.</p>
+                <a href="/apps/music-downloader" class="app-button">
+                    Launch App
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="app-card">
+                <div class="app-icon" style="background: linear-gradient(135deg, rgba(255, 0, 128, 0.1), rgba(128, 0, 255, 0.1)); border-color: rgba(255, 0, 128, 0.2);">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="color: #ff0080;">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5.5 14H12v-4h-1v4H9.5v-4h-1v4H7V9.5h1.5v3h1v-3H11v3h1V9.5h1.5V17zM17 17h-1.5v-7H17v7z"/>
+                    </svg>
+                </div>
+                <h2 class="app-title">Social Media Saver</h2>
+                <p class="app-description">Download photos and videos from Instagram, TikTok, Twitter/X, and Facebook. Save your favorite content quickly and easily.</p>
+                <a href="/apps/social-media-saver" class="app-button">
+                    Launch App
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="app-card coming-soon">
+                <div class="app-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-1 6h-3v3h-2v-3h-3v-2h3V7h2v3h3v2z"/>
+                    </svg>
+                </div>
+                <h2 class="app-title">Media Converter Suite</h2>
+                <p class="app-description">Convert audio, video, and image files between formats. Batch convert with ease and high quality.</p>
+                <span class="coming-soon-badge">Coming Soon</span>
+            </div>
+
+            <div class="app-card coming-soon">
+                <div class="app-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                    </svg>
+                </div>
+                <h2 class="app-title">PDF Toolkit</h2>
+                <p class="app-description">Merge, split, compress, and convert PDF files. Complete PDF management suite in your browser.</p>
+                <span class="coming-soon-badge">Coming Soon</span>
+            </div>
+        </main>
+
+        {% include 'footer.html' %}
+    </div>
+
+    <script>
+        // Format number with k, M, B suffixes
+        function formatNumber(num) {
+            if (num >= 1000000000) {
+                return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'B';
+            }
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+            }
+            if (num >= 1000) {
+                return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+            }
+            return num.toString();
+        }
+
+        // Poll for combined stats updates
+        async function updateStats() {
+            try {
+                const response = await fetch('/api/stats');
+                if (response.ok) {
+                    const stats = await response.json();
+                    const totalElement = document.getElementById('totalDownloads');
+                    const actualElement = document.getElementById('totalDownloadsActual');
+                    if (totalElement) {
+                        totalElement.textContent = formatNumber(stats.total_downloads);
+                    }
+                    if (actualElement) {
+                        actualElement.textContent = '(' + stats.total_downloads.toLocaleString() + ')';
+                    }
+                }
+            } catch (error) {
+                console.error('Stats update error:', error);
+            }
+        }
+
+        // Start polling for stats every 2 seconds
+        updateStats();
+        setInterval(updateStats, 2000);
+    </script>
+</body>
+</html>
