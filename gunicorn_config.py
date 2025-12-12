@@ -5,8 +5,11 @@ bind = "127.0.0.1:3000"
 backlog = 2048
 
 # Worker processes
-workers = 4
-worker_class = 'sync'
+# Use 1 worker to maintain shared state (active_downloads dictionary)
+# Use threads for concurrency instead of multiple workers
+workers = 1
+worker_class = 'gthread'
+threads = 4
 worker_connections = 1000
 timeout = 300
 keepalive = 2

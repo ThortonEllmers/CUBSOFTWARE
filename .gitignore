@@ -34,3 +34,7 @@ Thumbs.db
 # Environment
 .env
 .env.local
+
+# Documentation (keeping README.md)
+*.md
+!README.md
