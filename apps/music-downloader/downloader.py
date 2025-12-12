@@ -105,6 +105,12 @@ def download_mp3(url, output_path='downloads', quality='320'):
         ],
         'ffmpeg_location': ffmpeg_path if ffmpeg_path else None,
         'cookiefile': cookies_file if os.path.exists(cookies_file) else None,
+        'extractor_args': {
+            'youtube': {
+                'player_client': ['android', 'web'],
+                'player_skip': ['webpage', 'configs'],
+            }
+        },
         'outtmpl': os.path.join(output_path, '%(title)s.%(ext)s'),
         'quiet': False,
         'no_warnings': False,
