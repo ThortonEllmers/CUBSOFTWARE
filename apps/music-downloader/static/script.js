@@ -170,6 +170,10 @@ function startPolling() {
                             }
                         }, 120000); // 2 minutes
                     }
+                } else if (response.status === 404) {
+                    // Task not found on server, remove from activeDownloads
+                    console.log(`Task ${taskId} not found on server, removing from UI`);
+                    activeDownloads.delete(taskId);
                 }
             } catch (error) {
                 console.error('Polling error:', error);

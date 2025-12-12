@@ -88,7 +88,17 @@ function createDownloadCard(downloadId, url, platform) {
 function startPolling(downloadId) {
     const interval = setInterval(() => {
         fetch(`/apps/social-media-saver/api/status/${downloadId}`)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    if (response.status === 404) {
+                        console.log(`Task ${downloadId} not found on server`);
+                        clearInterval(interval);
+                        pollingIntervals.delete(downloadId);
+                    }
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 updateDownloadCard(downloadId, data);
 
@@ -103,8 +113,6 @@ function startPolling(downloadId) {
             })
             .catch(error => {
                 console.error('Polling error:', error);
-                clearInterval(interval);
-                pollingIntervals.delete(downloadId);
             });
     }, 1000);
 
