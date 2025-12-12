@@ -38,3 +38,6 @@ Thumbs.db
 # Documentation (keeping README.md)
 *.md
 !README.md
+
+# YouTube cookies (sensitive - never commit)
+youtube_cookies.txt

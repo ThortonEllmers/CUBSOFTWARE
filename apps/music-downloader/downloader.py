@@ -15,8 +15,15 @@ def download_spotify(url, output_path='downloads', quality='320'):
     try:
         print(f"Processing Spotify URL: {url}\n")
 
+        # Check for YouTube cookies file
+        cookies_file = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'youtube_cookies.txt')
+
         # Use system spotdl (works on both Windows and Linux)
         cmd = ["spotdl", url, "--output", output_path, "--format", "mp3", "--bitrate", f"{quality}k"]
+
+        # Add cookies if available (spotdl uses yt-dlp internally)
+        if os.path.exists(cookies_file):
+            cmd.extend(["--cookie-file", cookies_file])
 
         result = subprocess.run(
             cmd,
@@ -80,6 +87,9 @@ def download_mp3(url, output_path='downloads', quality='320'):
         if os.path.exists(windows_ffmpeg):
             ffmpeg_path = windows_ffmpeg
 
+    # Check for YouTube cookies file
+    cookies_file = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'youtube_cookies.txt')
+
     ydl_opts = {
         'format': 'bestaudio/best',
         'postprocessors': [
@@ -94,6 +104,7 @@ def download_mp3(url, output_path='downloads', quality='320'):
             },
         ],
         'ffmpeg_location': ffmpeg_path if ffmpeg_path else None,
+        'cookiefile': cookies_file if os.path.exists(cookies_file) else None,
         'outtmpl': os.path.join(output_path, '%(title)s.%(ext)s'),
         'quiet': False,
         'no_warnings': False,
