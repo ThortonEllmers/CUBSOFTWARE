@@ -107,10 +107,10 @@ def download_mp3(url, output_path='downloads', quality='320'):
         'cookiefile': cookies_file if os.path.exists(cookies_file) else None,
         'extractor_args': {
             'youtube': {
-                'player_client': ['android', 'web'],
-                'player_skip': ['webpage', 'configs'],
+                'player_client': ['web'],
             }
         },
+        'remote_components': ['ejs:github'],
         'outtmpl': os.path.join(output_path, '%(title)s.%(ext)s'),
         'quiet': False,
         'no_warnings': False,
